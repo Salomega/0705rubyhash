@@ -9,8 +9,9 @@ l = coins.length
 #puts rate.max 
 
 
-puts "$6558.07"[1..-1].to_f
+#puts "$6558.07"[1..-1].to_f
 
+puts  "1) la crypto qui a la plus grosse valeur est : "
 
 def max_hash(hashx)
 	#a = hashh.key(hashh.values[1..-1].to_f.max)
@@ -18,8 +19,9 @@ def max_hash(hashx)
 	return a
 end
 
-p "1) la crypto qui a la plus grosse valeur est : "
-puts max_hash(@my_hash)
+print max_hash(@my_hash)
+puts " "
+puts " "
 
 
 def min_hash(hashx)
@@ -39,11 +41,12 @@ def contient_coin(hashx)
 			i += 1
 		end
 	end
-	print "3) Le nombre de crypto qui contient le mot coin est "    
+	print "3) Le nombre de crypto qui contient le mot coin est : "    
 	puts i 
 end
 
 contient_coin(@my_hash)
+puts " "
 
 #pouet = {Bitcoin: $6558.07, Ethereum: $468.95, XRP: $0.487526}
 
@@ -64,23 +67,18 @@ puts " "
 puts "4) Devises dont le cours est inférieur a 6000 :"
 puts " "
 p inf_taux(@my_hash, 6000)
+puts " "
 
 
 def max_inf_taux(hashx , taux)
-	a = max_inf_taux(hashx , taux)
-	b = a.max_by{|key, value| value }
-	
-	#b = max_hash(a)
-	return b
+	aaa = inf_taux(hashx , taux)
+	bbb = max_hash(aaa)
+	return bbb
 end
 
 puts " "
 puts " "
-puts " "
-puts " "
 p "Le cours le plus haut parmi celles-la est : " 
-puts max_inf_taux(@my_hash , 6000)
-
-
-
+print max_inf_taux(@my_hash , 6000)
+puts " "
 
